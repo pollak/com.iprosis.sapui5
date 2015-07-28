@@ -1,0 +1,134 @@
+class com.iprosis.sapui5.RangeSlider extends Component {
+
+	/* Sets the minimum value. */
+	void setMin(/* Minimum value */ float min) {*
+		this.min = min;
+	*}
+	
+	/* Returns the minimum value. */
+	float getMin() {*
+		return this.min;
+	*}
+
+	/* Sets the maximum value. */
+	void setMax(/* Maximum value */ float max) {*
+		this.max = max;
+	*}
+	
+	/* Returns the maximum value. */
+	float getMax() {*
+		return this.max;
+	*}
+
+	/* Sets the value. */
+	void setValue(/* Value */ float value) {*
+		this.value = value;
+	*}
+	
+	/* Returns the value. */
+	float getValue() {*
+		return this.value;
+	*}
+	
+	/* Sets the value2. */
+	void setValue2(/* Value */ float value2) {*
+		this.value2 = value2;
+	*}
+	
+	/* Returns the value2. */
+	float getValue2() {*
+		return this.value2;
+	*}
+	
+	/* Sets the total units value. */
+	void setTotalUnits(/* Total units value */ int totalUnits) {*
+		this.totalUnits = totalUnits;
+	*}
+	
+	/* Returns the total units value. */
+	int getTotalUnits() {*
+		return this.totalUnits;
+	*}
+
+	/* Sets the small step width value. */
+	void setSmallStepWidth(/* Small step width value */ float smallStepWidth) {*
+		this.smallStepWidth = smallStepWidth;
+	*}
+	
+	/* Returns the small step width value. */
+	float getSmallStepWidth() {*
+		return this.smallStepWidth;
+	*}
+	
+	/* Returns the value inputString Range of the scroll. */
+	String getInputString() {*
+		return this.value + " - " + this.value2;
+	*}
+}
+
+class com.iprosis.sapui5.Slider extends Component {
+
+	/* Sets the minimum value. */
+	void setMin(/* Minimum value */ float min) {*
+		this.min = min;
+	*}
+	
+	/* Returns the minimum value. */
+	float getMin() {*
+		return this.min;
+	*}
+
+	/* Sets the maximum value. */
+	void setMax(/* Maximum value */ float max) {*
+		this.max = max;
+	*}
+	
+	/* Returns the maximum value. */
+	float getMax() {*
+		return this.max;
+	*}
+
+	/* Sets the value. */
+	void setValue(/* Value */ float value) {*
+		this.value = value;
+	*}
+	
+	/* Returns the value. */
+	float getValue() {*
+		return this.value;
+	*}
+	
+	/* Sets the total units value. */
+	void setTotalUnits(/* Total units value */ int totalUnits) {*
+		this.totalUnits = totalUnits;
+	*}
+	
+	/* Returns the total units value. */
+	int getTotalUnits() {*
+		return this.totalUnits;
+	*}
+
+	/* Sets the small step width value. */
+	void setSmallStepWidth(/* Small step width value */ float smallStepWidth) {*
+		this.smallStepWidth = smallStepWidth;
+	*}
+	
+	/* Returns the small step width value. */
+	float getSmallStepWidth() {*
+		return this.smallStepWidth;
+	*}
+}
+
+class com.iprosis.sapui5.AutoComplete extends Component {
+
+	/* Sets the selected value. */
+	void setValue(/* Selected value */ String newValue) {*
+		this.SelectedValue = newValue;
+	*}
+	
+	/* Returns the selected value. */
+	String getValue() {*
+		return this.SelectedValue;
+	*}
+
+}

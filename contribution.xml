@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdkExtension
+	xmlns="http://www.sap.com/bi/zen/sdk"
+	id="com.iprosis.sapui5"
+	title="Design Studio SDK Extension SAPUI5 Components"
+	version="1.0"
+	vendor="iprosis">
+	<group id="iProsis" title="iProsis Custom Components"/>
+	<component
+		id="RangeSlider"
+		title="Range Slider"
+		icon="res/RangeSlider.png"
+		handlerType="sapui5"
+		group="iProsis">
+		<jsInclude>res/js/component.js</jsInclude>
+		<property id="min" title="Min" type="float"/>
+		<property id="max" title="Max" type="float"/>
+		<property id="value" title="Value" type="float"/>
+		<property id="value2" title="Value2" type="float"/>
+		<property id="totalUnits" title="TotalUnits" type="int"/>
+		<property id="vertical" title="Vertical" type="boolean"/>
+		<property id="stepLabels" title="StepLabels" type="boolean"/>
+		<property id="smallStepWidth" title="SmallStepWidth" type="float"/>
+		<property id="onChange"	title="On Change" type="ScriptText"	group="Events"/>
+		<initialization>
+			<defaultValue property="WIDTH">300</defaultValue>
+			<defaultValue property="HEIGHT">30</defaultValue>
+			<defaultValue property="min">0</defaultValue>
+			<defaultValue property="max">100</defaultValue>
+			<defaultValue property="value">0</defaultValue>
+			<defaultValue property="value2">100</defaultValue>
+			<defaultValue property="totalUnits">10</defaultValue>
+			<defaultValue property="vertical">false</defaultValue>
+			<defaultValue property="stepLabels">true</defaultValue>
+			<defaultValue property="smallStepWidth">10</defaultValue>
+		</initialization>
+	</component>
+		<component
+		id="Slider"
+		title="Slider"
+		icon="res/Slider.png"
+		handlerType="sapui5"
+		group="iProsis">
+		<jsInclude>res/js/component.js</jsInclude>
+		<property id="min" title="Min" type="float"/>
+		<property id="max" title="Max" type="float"/>
+		<property id="value" title="Value" type="float"/>
+		<property id="totalUnits" title="TotalUnits" type="int"/>
+		<property id="vertical" title="Vertical" type="boolean"/>
+		<property id="stepLabels" title="StepLabels" type="boolean"/>
+		<property id="smallStepWidth" title="SmallStepWidth" type="float"/>
+		<property id="onChange"	title="On Change" type="ScriptText"	group="Events"/>
+		<initialization>
+			<defaultValue property="WIDTH">300</defaultValue>
+			<defaultValue property="HEIGHT">30</defaultValue>
+			<defaultValue property="min">0</defaultValue>
+			<defaultValue property="max">100</defaultValue>
+			<defaultValue property="value">0</defaultValue>
+			<defaultValue property="totalUnits">10</defaultValue>
+			<defaultValue property="vertical">false</defaultValue>
+			<defaultValue property="stepLabels">true</defaultValue>
+			<defaultValue property="smallStepWidth">10</defaultValue>
+		</initialization>
+	</component>
+	<component
+		id="AutoComplete"
+		title="Auto Complete"
+		icon="res/AutoComplete.png"
+		handlerType="div"
+		tooltip="Auto Complete"
+		databound="true"
+		group="iProsis">
+		<jsInclude>res/js/component.js</jsInclude>
+		<cssInclude>css/component.css</cssInclude>
+		<property id="DataResultSet" title="Data Selection" 	type="ResultSet" 	 group="DataBinding"	tooltip="Data"/>
+		<property id="onClick"		 title="On Click" 	 		type="ScriptText"	 group="Events"/>
+		<property id="MaxItems" 	 title="Max Items" 			type="int"	 		 />
+		<property id="MaxPopupItems" title="Max Popup Items" 	type="int"	 		 />
+		<property id="DisplayKey" 	 title="Display Key" 		type="boolean"	 	 />
+		<property id="SelectedValue" title="Selected Value" 	type="String"	 	 visible="false"/>
+		<initialization>
+			<defaultValue property="WIDTH">150</defaultValue>
+			<defaultValue property="HEIGHT">20</defaultValue>
+			<defaultValue property="MaxItems">5000</defaultValue>
+			<defaultValue property="MaxPopupItems">5</defaultValue>
+			<defaultValue property="DisplayKey">true</defaultValue>
+			<defaultValue property="SelectedValue">"555"</defaultValue>
+		</initialization>
+	</component>
+</sdkExtension>
