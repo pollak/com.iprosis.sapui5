@@ -70,6 +70,7 @@
 		tooltip="Auto Complete"
 		databound="true"
 		group="iProsis">
+		<jsInclude>res/js/jquery-ui-1.9.2.custom.js</jsInclude>
 		<jsInclude>res/js/component.js</jsInclude>
 		<cssInclude>css/component.css</cssInclude>
 		<property id="DataResultSet" title="Data Selection" 	type="ResultSet" 	 group="DataBinding"	tooltip="Data"/>
