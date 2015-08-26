@@ -1,7 +1,7 @@
-Manifest-Version: 1.0.0
+Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Design Studio SDK Extension SAPUI5 Components
 Bundle-SymbolicName: com.iprosis.sapui5;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 15.0.1.qualifier
 Require-Bundle: com.sap.ip.bi.zen.rt.components.sdk.eclipse
 Bundle-Vendor: iprosis

@@ -3,7 +3,7 @@
 	xmlns="http://www.sap.com/bi/zen/sdk"
 	id="com.iprosis.sapui5"
 	title="Design Studio SDK Extension SAPUI5 Components"
-	version="1.0"
+	version="15.0"
 	vendor="iprosis">
 	<group id="iProsis" title="iProsis Custom Components"/>
 	<component
@@ -70,11 +70,10 @@
 		tooltip="Auto Complete"
 		databound="true"
 		group="iProsis">
-		<jsInclude>res/js/jquery-ui-1.9.2.custom.js</jsInclude>
 		<jsInclude>res/js/component.js</jsInclude>
 		<cssInclude>css/component.css</cssInclude>
 		<property id="DataResultSet" title="Data Selection" 	type="ResultSet" 	 group="DataBinding"	tooltip="Data"/>
-		<property id="onClick"		 title="On Click" 	 		type="ScriptText"	 group="Events"/>
+		<property id="onChange"		 title="On Change" 	 		type="ScriptText"	 group="Events"/>
 		<property id="MaxItems" 	 title="Max Items" 			type="int"	 		 />
 		<property id="MaxPopupItems" title="Max Popup Items" 	type="int"	 		 />
 		<property id="DisplayKey" 	 title="Display Key" 		type="boolean"	 	 />
@@ -82,6 +81,8 @@
 		<property id="SelectedText"  title="Selected Text" 		type="String"	 	 visible="false"/>
 		<property id="Reload" 		 title="Reload" 			type="boolean"	 	 visible="false"/>
 		<initialization>
+			<defaultValue property="LEFT_MARGIN">0</defaultValue>
+			<defaultValue property="TOP_MARGIN">0</defaultValue>
 			<defaultValue property="WIDTH">150</defaultValue>
 			<defaultValue property="HEIGHT">20</defaultValue>
 			<defaultValue property="MaxItems">5000</defaultValue>

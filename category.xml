@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/SampleExtensionFeature_1.0.0.qualifier.jar" id="SampleExtensionFeature" version="1.0.0.qualifier">
-      <category name="com.sap.ip.bi.zen.sdk"/>
-   </feature>
+   <feature url="features/iprosis.sapui5_15.0.1.qualifier.jar" id="iprosis.sapui5" version="15.0.1.qualifier"/>
    <category-def name="com.sap.ip.bi.zen.sdk" label="com.sap.ip.bi.zen.sdk"/>
 </site>

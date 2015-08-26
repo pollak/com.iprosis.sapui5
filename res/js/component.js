@@ -37,10 +37,6 @@ sap.designstudio.sdk.Component.subclass("com.iprosis.sapui5.AutoComplete", funct
 
 	this.init = function() {
 		
-		this.$().click(function() {
-			that.fireEvent("onclick");
-		});
-		
 		if (this._alive){
 			return;
 		} else {
@@ -62,7 +58,8 @@ sap.designstudio.sdk.Component.subclass("com.iprosis.sapui5.AutoComplete", funct
 			        selectedValue = item.getProperty("additionalText");
 			        selectedText = item.getProperty("text");
 		            that.firePropertiesChanged(["SelectedValue"]);
-		            that.firePropertiesChanged(["SelectedText"]);  
+		            that.firePropertiesChanged(["SelectedText"]);
+		            that.fireEvent("onChange");  
 			     })  
     			
 			});
@@ -76,12 +73,13 @@ sap.designstudio.sdk.Component.subclass("com.iprosis.sapui5.AutoComplete", funct
 	};
 	
 	this.afterUpdate = function() {
-		
-		if (reload){
-			return;
-		} else {
-			this.insertData();
-			reload = true;
+		if (dataResultSet){
+			if (reload){
+				return;
+			} else {
+				this.insertData();
+				reload = true;
+			}
 		}
 	};
 	
