@@ -130,5 +130,15 @@ class com.iprosis.sapui5.AutoComplete extends Component {
 	String getValue() {*
 		return this.SelectedValue;
 	*}
+	
+	/* Sets the selected text. */
+	void setText(/* Selected value */ String newValue) {*
+		this.SelectedText = newValue;
+	*}
+	
+	/* Returns the selected text. */
+	String getText() {*
+		return this.SelectedText;
+	*}
 
 }

@@ -79,13 +79,14 @@
 		<property id="MaxPopupItems" title="Max Popup Items" 	type="int"	 		 />
 		<property id="DisplayKey" 	 title="Display Key" 		type="boolean"	 	 />
 		<property id="SelectedValue" title="Selected Value" 	type="String"	 	 visible="false"/>
+		<property id="SelectedText"  title="Selected Text" 		type="String"	 	 visible="false"/>
+		<property id="Reload" 		 title="Reload" 			type="boolean"	 	 visible="false"/>
 		<initialization>
 			<defaultValue property="WIDTH">150</defaultValue>
 			<defaultValue property="HEIGHT">20</defaultValue>
 			<defaultValue property="MaxItems">5000</defaultValue>
 			<defaultValue property="MaxPopupItems">5</defaultValue>
 			<defaultValue property="DisplayKey">true</defaultValue>
-			<defaultValue property="SelectedValue">"555"</defaultValue>
 		</initialization>
 	</component>
 </sdkExtension>

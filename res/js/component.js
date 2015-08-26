@@ -1,3 +1,4 @@
+//Last Update - Amit Pollak 10.03.2015
 sap.ui.commons.RangeSlider.extend("com.iprosis.sapui5.RangeSlider", {
 	initDesignStudio: function() {
 		this.attachChange(function() {
@@ -9,6 +10,7 @@ sap.ui.commons.RangeSlider.extend("com.iprosis.sapui5.RangeSlider", {
 	renderer: {}
 });
 
+//Last Update - Amit Pollak 10.03.2015
 sap.ui.commons.Slider.extend("com.iprosis.sapui5.Slider", {
 	initDesignStudio: function() {
 		this.attachChange(function() {
@@ -19,7 +21,7 @@ sap.ui.commons.Slider.extend("com.iprosis.sapui5.Slider", {
 	renderer: {}
 });
 
-
+//Last Update - Amit Pollak 26.08.2015
 sap.designstudio.sdk.Component.subclass("com.iprosis.sapui5.AutoComplete", function() {
 
 	var dataResultSet = null;
@@ -27,6 +29,8 @@ sap.designstudio.sdk.Component.subclass("com.iprosis.sapui5.AutoComplete", funct
 	var maxPopupItems = null;
 	var displayKey = null;
 	var selectedValue = null;
+	var selectedText = null;
+	var reload = false;
 	var that = this;
 	var Data = null;
 	this.oAuto = null;
@@ -52,9 +56,15 @@ sap.designstudio.sdk.Component.subclass("com.iprosis.sapui5.AutoComplete", funct
 					path: "/",
 					template: new sap.ui.core.ListItem({text: "{text}", additionalText: "{key}"})
 				},
-				change : function() {  
-    			that.firePropertiesChanged(["SelectedValue"]);  
-			} 
+				
+				change: (function (oEvent){  
+			        var item = oEvent.getParameter("selectedItem");
+			        selectedValue = item.getProperty("additionalText");
+			        selectedText = item.getProperty("text");
+		            that.firePropertiesChanged(["SelectedValue"]);
+		            that.firePropertiesChanged(["SelectedText"]);  
+			     })  
+    			
 			});
 			
 			this.$().html('<div id="' + currentDiv + '" class="sapUiBody"> ');
@@ -62,18 +72,16 @@ sap.designstudio.sdk.Component.subclass("com.iprosis.sapui5.AutoComplete", funct
 			this.oAuto.placeAt(currentDiv);
 			
 			this._alive = true;
-			
-
 		}
 	};
 	
 	this.afterUpdate = function() {
 		
-		if (this._notempty){
+		if (reload){
 			return;
 		} else {
 			this.insertData();
-			this._notempty = true;
+			reload = true;
 		}
 	};
 	
@@ -92,6 +100,11 @@ sap.designstudio.sdk.Component.subclass("com.iprosis.sapui5.AutoComplete", funct
 		if(value===undefined) {
 			return dataResultSet;
 		} else {
+			//Clear Auto
+			if (reload) {
+				this.oAuto.setValue("");
+				reload = false;
+			}
 			dataResultSet = value;
 			return this;
 		};
@@ -99,8 +112,10 @@ sap.designstudio.sdk.Component.subclass("com.iprosis.sapui5.AutoComplete", funct
 	
 	this.MaxItems = function(value) {
 		if(value===undefined) {
+			Reload = false;
 			return maxItems;
 		} else {
+			Reload = false;
 			maxItems = value;
 			return this;
 		};
@@ -108,8 +123,10 @@ sap.designstudio.sdk.Component.subclass("com.iprosis.sapui5.AutoComplete", funct
 	
 	this.MaxPopupItems = function(value) {
 		if(value===undefined) {
+			Reload = false;
 			return maxPopupItems;
 		} else {
+			Reload = false;
 			maxPopupItems = value;
 			return this;
 		};
@@ -117,8 +134,10 @@ sap.designstudio.sdk.Component.subclass("com.iprosis.sapui5.AutoComplete", funct
 	
 	this.DisplayKey = function(value) {
 		if(value===undefined) {
+			Reload = false;
 			return displayKey;
 		} else {
+			Reload = false;
 			displayKey = value;
 			return this;
 		};
@@ -126,9 +145,18 @@ sap.designstudio.sdk.Component.subclass("com.iprosis.sapui5.AutoComplete", funct
 	
 	this.SelectedValue = function(value) {
 		if(value===undefined) {
-			return this.oAuto.getValue();
+			return selectedValue;
 		} else {
 			selectedValue = value;
+			return this;
+		};
+	};
+	
+	this.SelectedText = function(value) {
+		if(value===undefined) {
+			return selectedText;
+		} else {
+			selectedText = value;
 			return this;
 		};
 	};
