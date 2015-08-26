@@ -64,7 +64,7 @@ sap.designstudio.sdk.Component.subclass("com.iprosis.sapui5.AutoComplete", funct
     			
 			});
 			
-			this.$().html('<div id="' + currentDiv + '" class="sapUiBody"> ');
+			this.$().html('<div id="' + currentDiv + '"> ');
 			
 			this.oAuto.placeAt(currentDiv);
 			
