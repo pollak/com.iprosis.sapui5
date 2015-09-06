@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde version="3.6"?>
-
-<target name="designstudio" sequenceNumber="3">
+<?pde version="3.6"?><target name="designstudio">
 <locations>
-<location path="C:\Program Files (x86)\SAP BusinessObjects\Design Studio" type="Profile"/>
+<location path="C:\Program Files\SAP BusinessObjects\Design Studio" type="Profile"/>
 </locations>
 <environment>
 <os>win32</os>
 <ws>win32</ws>
-<arch>x86</arch>
+<arch>x86_64</arch>
+<nl>en</nl>
 </environment>
+<launcherArgs>
+<vmArgs>-Xmx4g&#13;
+-Xms512m&#13;
+-XX:PermSize=64m&#13;
+-XX:MaxPermSize=1g</vmArgs>
+</launcherArgs>
 </target>
